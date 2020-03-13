@@ -18,6 +18,8 @@ import java.util.Set;
 @SupportedAnnotationTypes("annotation.simplest.Simple")
 @SupportedSourceVersion(SourceVersion.RELEASE_8)
 public class SimpleProcessor extends AbstractProcessor {
+
+    @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
         for (TypeElement t : annotations) {
             System.out.println(t);
