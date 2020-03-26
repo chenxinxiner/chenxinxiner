@@ -29,7 +29,7 @@ public class JavaCompilerTask {
         s.append("}\n");
         s.append("}");
 
-        final Class<?> compile = comppile(className, s.toString());
+        final Class<?> compile = compile(className, s.toString());
         try {
             Object o = compile.newInstance();
             Method main = compile.getMethod("main", String[].class);
@@ -39,7 +39,7 @@ public class JavaCompilerTask {
         }
     }
 
-    private static Class<?> comppile(String className, String javaCodes) {
+    private static Class<?> compile(String className, String javaCodes) {
         JavaSourceFromString srcObject = new JavaSourceFromString(className, javaCodes);
         System.out.println(srcObject.getCode());
         List<JavaSourceFromString> javaSourceFromStrings = Arrays.asList(srcObject);
