@@ -39,7 +39,7 @@ public class JavaCompilerTask {
         }
     }
 
-    private static Class<?> compile(String className, String javaCodes) {
+    public static Class<?> compile(String className, String javaCodes) {
         JavaSourceFromString srcObject = new JavaSourceFromString(className, javaCodes);
         System.out.println(srcObject.getCode());
         List<JavaSourceFromString> javaSourceFromStrings = Arrays.asList(srcObject);
